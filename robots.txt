@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://laykim829.github.io/solo-living-lab/sitemap.xml
