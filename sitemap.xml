@@ -30,9 +30,19 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-    <url>
-      <loc>https://laykim829.github.io/solo-living-lab/posts/studio-apartment-washing-machine-guide.html</loc>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-    </url>
+  <url>
+    <loc>https://laykim829.github.io/solo-living-lab/posts/studio-apartment-mold-prevention.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://laykim829.github.io/solo-living-lab/posts/first-grocery-shopping-list.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://laykim829.github.io/solo-living-lab/posts/studio-apartment-organization-routine.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
