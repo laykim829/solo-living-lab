@@ -492,7 +492,7 @@ const PAGE_SIZE = 8;
 function renderPosts(grid, list) {
 grid.innerHTML = list.map((post, i) => `
 <div class="blog-card">
-<div class="blog-thumb" style="background:${gradients[i % gradients.length]};"></div>
+<div class="blog-thumb" style="background-image:url('https://picsum.photos/seed/${(post.url||'').replace(/^posts\//,'').replace(/\.html$/,'')}/400/240');background-size:cover;background-position:center;"></div>
 <div class="blog-body">
 <div class="cat">${post.category}</div>
 <h3>${post.title}</h3>
