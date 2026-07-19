@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CK7Z0BCTQS"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-CK7Z0BCTQS');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>관리비 분담 계산기 (룸메이트 정산) | 자취생 연구소</title>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6162930467504910" crossorigin="anonymous"></script>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({
+google_ad_client: "ca-pub-6162930467504910",
+enable_page_level_ads: true
+});
+</script>
+<meta name="description" content="총 관리비와 인원수를 입력하면 룸메이트·쉐어하우스 관리비를 1인당 얼마씩 나눠야 하는지 바로 계산할 수 있는 관리비 분담 계산기입니다.">
+<meta name="keywords" content="관리비 분담 계산기, 룸메이트 정산, 쉐어하우스 관리비, 공과금 나누기">
+<link rel="canonical" href="https://laykim829.github.io/solo-living-lab/posts/maintenance-fee-split-calculator.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="자취생 연구소">
+<meta property="og:title" content="관리비 분담 계산기 (룸메이트 정산) | 자취생 연구소">
+<meta property="og:description" content="총 관리비와 인원수를 입력하면 1인당 부담할 금액을 바로 계산할 수 있습니다.">
+<meta property="og:url" content="https://laykim829.github.io/solo-living-lab/posts/maintenance-fee-split-calculator.html">
+<meta property="og:locale" content="ko_KR">
+<style>
+:root{
+--bg:#faf5ee; --bg2:#f0e5d6; --card:#ffffff; --accent:#c17a5a; --accent2:#8a9a7e;
+--text:#3a332c; --muted:#8c8175; --border:#e8dcc9;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+a{color:inherit;text-decoration:none;}
+header{position:sticky;top:0;z-index:100;background:rgba(250,245,238,0.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);}
+.nav-wrap{max-width:800px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:16px 20px;}
+.logo{font-size:1.2rem;font-weight:800;}
+.logo span{color:var(--accent);}
+.back-link{font-size:0.85rem;color:var(--muted);}
+.article-wrap{max-width:800px;margin:0 auto;padding:50px 20px 80px;}
+.cat-badge{display:inline-block;background:var(--card);border:1px solid var(--border);color:var(--accent);
+font-size:0.78rem;font-weight:700;padding:5px 14px;border-radius:20px;margin-bottom:18px;}
+h1{font-size:2rem;font-weight:800;line-height:1.4;margin-bottom:12px;}
+.meta{color:var(--muted);font-size:0.85rem;margin-bottom:36px;}
+.article-body h2{font-size:1.3rem;margin:36px 0 14px;color:var(--text);}
+.article-body p{color:#524a40;font-size:1rem;margin-bottom:16px;}
+.article-body ul{color:#524a40;margin:0 0 16px 22px;}
+.article-body li{margin-bottom:8px;}
+.ad-box{border:1px dashed var(--border);background:#ffffffaa;border-radius:12px;padding:22px;text-align:center;
+color:var(--muted);font-size:0.85rem;margin:34px 0;}
+.disclosure{margin-top:40px;padding-top:20px;border-top:1px dashed var(--border);color:#a89d8c;font-size:0.78rem;}
+footer{border-top:1px solid var(--border);padding:30px 20px;color:var(--muted);font-size:0.82rem;text-align:center;}
+footer a{color:var(--accent);margin:0 8px;}
+.calc-box{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;margin:24px 0 36px;box-shadow:0 1px 3px rgba(0,0,0,0.04);}
+.calc-row{margin-bottom:16px;}
+.calc-row label{display:block;font-size:0.88rem;color:var(--muted);margin-bottom:6px;}
+.calc-row input{width:100%;padding:11px 14px;border-radius:8px;border:1px solid var(--border);
+background:#fbf8f2;color:var(--text);font-size:0.95rem;}
+.calc-btn{width:100%;padding:13px;border:none;border-radius:8px;font-weight:700;font-size:0.95rem;cursor:pointer;
+background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;margin-top:6px;}
+.calc-result{margin-top:20px;padding:18px;border-radius:10px;background:#fbf8f2;border:1px solid var(--border);
+text-align:center;font-size:1.05rem;font-weight:700;color:var(--accent);display:none;}
+</style>
+</head>
+<body>
+
+<header>
+<div class="nav-wrap">
+<div class="logo">자취생<span>연구소</span></div>
+<a href="../index.html" class="back-link">← 홈으로</a>
+</div>
+</header>
+
+<div class="article-wrap">
+<span class="cat-badge">계산기</span>
+<h1>관리비 분담 계산기 (룸메이트 정산)</h1>
+<div class="meta">2026-07-16 · 자취생 연구소</div>
+
+<div class="hero-banner" style="border-radius:16px;overflow:hidden;margin-bottom:36px;">
+<img src="https://picsum.photos/seed/maintenance-fee-split-calculator/800/400" alt="관리비 분담 계산기" loading="lazy" style="width:100%;height:260px;object-fit:cover;display:block;">
+</div>
+
+<div class="article-body">
+<p>룸메이트나 쉐어하우스에서 관리비를 나눌 때, 균등 분배와 사용량 비례 분배 중 어느 쪽이 맞을지 애매한 경우가 많습니다. 총액과 인원수를 입력해 빠르게 1인당 부담 금액을 계산해보세요.</p>
+
+<div class="calc-box">
+<div class="calc-row">
+<label for="total">총 관리비 (원)</label>
+<input type="number" id="total" placeholder="예: 150000" min="0">
+</div>
+<div class="calc-row">
+<label for="people">분담 인원 (명)</label>
+<input type="number" id="people" placeholder="예: 3" min="1">
+</div>
+<button class="calc-btn" onclick="calcSplit()">1인당 분담액 계산하기</button>
+<div class="calc-result" id="splitResult"></div>
+</div>
+
+<h2>1. 균등 분배 vs 사용량 비례 분배</h2>
+<p>공용 공간 관리비(청소, 인터넷 등)는 균등 분배가 합리적이지만, 전기·수도처럼 개인 사용량 차이가 큰 항목은 비례 분배가 더 공정할 수 있습니다. 미리 기준을 정해두면 갈등을 줄일 수 있습니다.</p>
+
+<h2>2. 정산 갈등을 줄이는 팁</h2>
+<ul>
+<li>정산 기준(균등/비례)을 입주 전에 미리 합의해두기</li>
+<li>정산 내역을 공유 문서나 앱으로 투명하게 기록하기</li>
+<li>매달 같은 날짜에 정기적으로 정산해 밀리지 않도록 관리</li>
+</ul>
+
+<div class="ad-box" style="padding:20px;">
+<div style="font-size:0.78rem;color:var(--accent);font-weight:700;margin-bottom:10px;">🏠 이 글에서 추천하는 상품</div>
+<a href="https://bitl.bz/rHtn7u" target="_blank" rel="noopener sponsored" style="display:inline-block;background:var(--accent);color:#fff;font-weight:700;font-size:0.92rem;padding:12px 30px;border-radius:10px;margin:4px 0;">공용 수납정리함 보러가기 →</a>
+<p style="font-size:0.72rem;color:#a89d8c;margin-top:12px;">이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+</div>
+
+<p>공용 물품도 미리 구역을 나눠 정리해두면 관리비 정산뿐 아니라 생활 갈등도 줄일 수 있습니다.</p>
+</div>
+
+<div class="ad-box" style="padding:16px;">
+<style>
+.adfit-mobile{display:none;}
+@media (max-width:720px){
+.adfit-desktop{display:none;}
+.adfit-mobile{display:block;}
+}
+</style>
+<div class="adfit-desktop" style="text-align:center;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-jqqgWFwVCw9IiAFW"
+data-ad-width="728"
+data-ad-height="90"></ins>
+</div>
+<div class="adfit-mobile" style="text-align:center;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-2bGjgB9usH9vjlPM"
+data-ad-width="320"
+data-ad-height="100"></ins>
+</div>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+</div>
+
+<div class="disclosure">
+※ 이 글에는 제휴 마케팅 링크가 포함될 수 있으며, 이를 통해 발생한 구매에 대해 사이트 운영자가 소정의 수수료를 받을 수 있습니다. 계산 결과는 참고용입니다.
+</div>
+
+<style>
+.post-nav{display:flex;gap:14px;margin:40px 0 0;flex-wrap:wrap;}
+.post-nav .nav-link{flex:1;min-width:200px;background:#ffffff;border:1px solid #e8dcc9;border-radius:12px;padding:16px 18px;color:#3a332c;transition:border-color .2s;}
+.post-nav .nav-link:hover{border-color:#c17a5a;}
+.post-nav .nav-label{display:block;font-size:0.78rem;color:#8c8175;margin-bottom:6px;}
+.post-nav .nav-title{display:block;font-size:0.92rem;font-weight:600;line-height:1.4;}
+.post-nav .nav-next{text-align:right;}
+@media (max-width:600px){.post-nav{flex-direction:column;}.post-nav .nav-next{text-align:left;}}
+</style>
+<div class="post-nav" id="postNav"></div>
+</div>
+
+<footer>
+<a href="../about.html">사이트 소개</a>·
+<a href="../privacy.html">개인정보처리방침</a>
+<div style="margin-top:10px;">© 2026 자취생 연구소</div>
+</footer>
+
+<script>
+function calcSplit(){
+var total = parseFloat(document.getElementById('total').value);
+var people = parseFloat(document.getElementById('people').value);
+var box = document.getElementById('splitResult');
+if(!total || !people || total <= 0 || people <= 0){
+box.style.display='block';
+box.textContent='총 관리비와 인원수를 정확히 입력해주세요.';
+return;
+}
+var each = total / people;
+box.style.display='block';
+box.textContent = '1인당 약 ' + Math.round(each).toLocaleString() + '원씩 분담하면 됩니다.';
+}
+(function(){
+fetch('../posts.json?_=' + Date.now())
+.then(function(r){ return r.json(); })
+.then(function(posts){
+posts.sort(function(a,b){ return new Date(b.date) - new Date(a.date); });
+var path = location.pathname.split('/').pop();
+var idx = posts.findIndex(function(p){ return p.url.indexOf(path) !== -1; });
+if (idx === -1) return;
+var newer = idx > 0 ? posts[idx - 1] : null;
+var older = idx < posts.length - 1 ? posts[idx + 1] : null;
+var nav = document.getElementById('postNav');
+if (!nav) return;
+var html = '';
+if (older) {
+html += '<a class="nav-link nav-prev" href="' + older.url.replace('posts/','') + '"><span class="nav-label">← 이전 글</span><span class="nav-title">' + older.title + '</span></a>';
+}
+if (newer) {
+html += '<a class="nav-link nav-next" href="' + newer.url.replace('posts/','') + '"><span class="nav-label">다음 글 →</span><span class="nav-title">' + newer.title + '</span></a>';
+}
+nav.innerHTML = html;
+})
+.catch(function(){});
+})();
+</script>
+</body>
+</html>
