@@ -149,22 +149,25 @@ box-shadow:0 1px 3px rgba(0,0,0,0.04);
 .blog-body p{color:var(--muted);font-size:0.85rem;}
 .blog-body .read-more{display:inline-block;margin-top:10px;font-size:0.85rem;color:var(--accent);font-weight:600;}
 
-.newsletter{
-background:linear-gradient(135deg,#f3e3d4,#e9efe4);
-border-radius:20px;padding:50px 30px;text-align:center;margin:60px auto;max-width:1100px;
+.mini-tools{
+background:linear-gradient(135deg,#3a2a1c,#2a3324);
+border-radius:20px;padding:50px 30px;margin:60px auto;max-width:1100px;
 }
-.newsletter h2{font-size:1.6rem;margin-bottom:10px;}
-.newsletter p{color:var(--muted);margin-bottom:22px;}
-.nl-form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
-.nl-form input{
-padding:12px 16px;border-radius:8px;border:1px solid var(--border);
-background:#fff;color:var(--text);min-width:250px;
+.mini-tools .section-head h2{color:#fff;}
+.mini-tools .section-head p{color:#e5dccb;}
+.mini-tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:30px;}
+.mini-tool-card{
+background:rgba(20,15,10,0.4);border:1px solid rgba(255,255,255,0.15);border-radius:14px;
+padding:22px;text-align:center;transition:.2s;
 }
-.nl-form button{
-padding:12px 22px;border:none;border-radius:8px;font-weight:700;cursor:pointer;
-background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;
+.mini-tool-card:hover{transform:translateY(-3px);border-color:#f0b18e;}
+.mini-tool-card .icon{font-size:1.8rem;margin-bottom:10px;}
+.mini-tool-card h3{font-size:1rem;color:#fff;margin-bottom:6px;}
+.mini-tool-card p{font-size:0.8rem;color:#dcd2c4;margin-bottom:14px;min-height:34px;}
+.mini-tool-card .go-btn{
+display:inline-block;font-size:0.82rem;font-weight:700;color:#f0b18e;
+border:1px solid #f0b18e;padding:7px 16px;border-radius:20px;
 }
-.nl-msg{margin-top:14px;font-size:0.85rem;color:var(--accent);min-height:20px;}
 
 footer{border-top:1px solid var(--border);padding:40px 20px;color:var(--muted);font-size:0.82rem;}
 .footer-wrap{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;}
@@ -208,7 +211,7 @@ body{padding-bottom:90px;}
 <ul id="navList">
 <li><a href="#tools">추천 자취템</a></li>
 <li><a href="#blog">원룸 가이드</a></li>
-<li><a href="#newsletter">뉴스레터</a></li>
+<li><a href="#tools-mini">미니 도구</a></li>
 <li><a href="#footer">문의</a></li>
 </ul>
 </nav>
@@ -394,14 +397,38 @@ new PartnersCoupang.G({"id":1003715,"trackingCode":"AF3401189","subId":null,"tem
 </div>
 </section>
 
-<div class="newsletter" id="newsletter">
-<h2>매주 새로운 자취 정보 받아보기</h2>
-<p>이메일을 남기면 신규 자취템 리뷰와 원룸 인테리어 가이드를 무료로 보내드립니다.</p>
-<form class="nl-form" id="nlForm">
-<input type="email" id="nlEmail" placeholder="이메일 주소 입력" required>
-<button type="submit">무료 구독하기</button>
-</form>
-<div class="nl-msg" id="nlMsg"></div>
+<div class="mini-tools" id="tools-mini">
+<div class="section-head">
+<div class="kicker">Mini Tools</div>
+<h2>자취 생활 계산기 모음</h2>
+<p>생활비, 전기요금, 관리비 분담, 보증금-월세 환산까지 바로 계산해보세요.</p>
+</div>
+<div class="mini-tool-grid">
+<div class="mini-tool-card">
+<div class="icon">💸</div>
+<h3>자취 생활비 계산기</h3>
+<p>월 예상 지출 확인</p>
+<a href="posts/living-cost-calculator.html" class="go-btn">계산하러 가기 →</a>
+</div>
+<div class="mini-tool-card">
+<div class="icon">⚡</div>
+<h3>전기요금 계산기</h3>
+<p>원룸 누진세 예상액</p>
+<a href="posts/electricity-bill-calculator.html" class="go-btn">계산하러 가기 →</a>
+</div>
+<div class="mini-tool-card">
+<div class="icon">🧾</div>
+<h3>관리비 분담 계산기</h3>
+<p>룸메이트 정산</p>
+<a href="posts/maintenance-fee-split-calculator.html" class="go-btn">계산하러 가기 →</a>
+</div>
+<div class="mini-tool-card">
+<div class="icon">🏠</div>
+<h3>보증금-월세 환산 계산기</h3>
+<p>전월세 전환율 계산</p>
+<a href="posts/deposit-to-rent-calculator.html" class="go-btn">계산하러 가기 →</a>
+</div>
+</div>
 </div>
 
 <div class="ad-slot">
@@ -471,7 +498,7 @@ data-ad-height="100"></ins>
 </div>
 <div class="footer-wrap">
 <div>© 2026 자취생 연구소. All rights reserved.</div>
-<div><a href="about.html" style="color:var(--accent);">사이트 소개</a> · <a href="privacy.html" style="color:var(--accent);">개인정보처리방침</a> · 문의: contact@example.com</div>
+<div><a href="about.html" style="color:var(--accent);">사이트 소개</a> · <a href="privacy.html" style="color:var(--accent);">개인정보처리방침</a> · 문의: dackc982@gmail.com</div>
 </div>
 </footer>
 
@@ -480,21 +507,6 @@ const menuBtn = document.getElementById('menuBtn');
 const navList = document.getElementById('navList');
 menuBtn.addEventListener('click', () => navList.classList.toggle('open'));
 
-const nlForm = document.getElementById('nlForm');
-const nlMsg = document.getElementById('nlMsg');
-nlForm.addEventListener('submit', (e) => {
-e.preventDefault();
-const email = document.getElementById('nlEmail').value;
-nlMsg.textContent = `${email} 구독이 완료되었습니다! (데모용 - 실제 발송 연동 필요)`;
-nlForm.reset();
-});
-
-const gradients = [
-'linear-gradient(135deg,#c17a5a,#8a9a7e)',
-'linear-gradient(135deg,#8a9a7e,#c17a5a)',
-'linear-gradient(135deg,#cc8b6c,#9aab8e)',
-'linear-gradient(135deg,#a8613f,#748a68)'
-];
 const PAGE_SIZE = 8;
 function renderPosts(grid, list) {
 grid.innerHTML = list.map((post, i) => `
